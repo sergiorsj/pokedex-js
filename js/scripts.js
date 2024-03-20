@@ -134,6 +134,8 @@ function showDetails(pokemon) {
 function addListItem(pokemon) {
     let pokemonList = document.getElementById('pokemonList');
     let listItem = document.createElement('li');
+    listItem.classList.add('list-group-item');
+    document.getElementById('myList').appendChild(listItem);
     let button = document.createElement('button');
     button.innerText = pokemon.name;
     button.classList.add('pokemon-button');
@@ -142,4 +144,14 @@ function addListItem(pokemon) {
     });
     listItem.appendChild(button);
     pokemonList.appendChild(listItem);
+}
+function addButton(text) {
+    // Create button element
+    var button = document.createElement('button');
+    // Add Bootstrap classes to the button element
+    button.classList.add('btn', 'btn-primary');
+    // Set button text
+    button.textContent = text;
+    // Append button to parent element
+    document.getElementById('buttonContainer').appendChild(button);
 }
